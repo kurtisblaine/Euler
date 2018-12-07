@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Title Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TitleScreenViewController" customModule="CSC470Euler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dde-ze-kA4" userLabel="EulerLogo">
+                                <rect key="frame" x="16" y="32" width="175" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="j9E-hn-ZJp"/>
+                                    <constraint firstAttribute="height" constant="76" id="lcn-VX-vd5"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzJ-Vb-HBM" userLabel="easyButton" customClass="DifficultyButton" customModule="CSC470Euler" customModuleProvider="target">
+                                <rect key="frame" x="356" y="32" width="196" height="76"/>
+                                <state key="normal" image="EasyButton"/>
+                                <connections>
+                                    <action selector="loadEasyGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xWl-2J-OcB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzz-4J-mHX" userLabel="mediumButton" customClass="DifficultyButton" customModule="CSC470Euler" customModuleProvider="target">
+                                <rect key="frame" x="356" y="122" width="196" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="5QQ-oc-jw0"/>
+                                    <constraint firstAttribute="height" constant="76" id="nEh-AY-Dga"/>
+                                </constraints>
+                                <state key="normal" image="MediumButton"/>
+                                <connections>
+                                    <action selector="loadMediumGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cdy-nw-EE8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk1-d6-zvf" userLabel="hardButton" customClass="DifficultyButton" customModule="CSC470Euler" customModuleProvider="target">
+                                <rect key="frame" x="356" y="212" width="196" height="76"/>
+                                <state key="normal" image="HardButton"/>
+                                <connections>
+                                    <action selector="loadHardGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ZA-vr-asF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiW-lr-J0K" userLabel="infoBtn">
+                                <rect key="frame" x="65.5" y="122" width="76" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="BPn-bn-FH6"/>
+                                    <constraint firstAttribute="height" constant="76" id="LLt-f7-QAx"/>
+                                </constraints>
+                                <state key="normal" image="InfoButton"/>
+                                <connections>
+                                    <action selector="showInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IY5-XH-8VO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-DD-o5Z" userLabel="musicBtn">
+                                <rect key="frame" x="65.5" y="212" width="76" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="9jQ-dc-dNK"/>
+                                    <constraint firstAttribute="height" constant="76" id="Htd-C9-J3I"/>
+                                </constraints>
+                                <state key="normal" image="MusicButton"/>
+                                <connections>
+                                    <action selector="triggerMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAj-14-ZNr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Clues" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgw-nO-DgB">
+                                <rect key="frame" x="227" y="141.5" width="113" height="37"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Clue" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRk-zn-y9I">
+                                <rect key="frame" x="249" y="231.5" width="91" height="37"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Clues" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-yj-puh">
+                                <rect key="frame" x="227" y="51.5" width="113" height="37"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xk1-d6-zvf" firstAttribute="trailing" secondItem="qzz-4J-mHX" secondAttribute="trailing" id="1zF-7H-weg"/>
+                            <constraint firstItem="dde-ze-kA4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="AJC-AC-B4H"/>
+                            <constraint firstItem="pmk-yj-puh" firstAttribute="trailing" secondItem="Jgw-nO-DgB" secondAttribute="trailing" id="Dgg-YR-cP6"/>
+                            <constraint firstItem="yRk-zn-y9I" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Jxw-DD-o5Z" secondAttribute="trailing" constant="107.5" id="Hq1-62-3WL"/>
+                            <constraint firstItem="qzz-4J-mHX" firstAttribute="leading" secondItem="Jgw-nO-DgB" secondAttribute="trailing" constant="16" id="JIr-K3-YqR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qzz-4J-mHX" secondAttribute="trailing" constant="16" id="OV1-WC-JvS"/>
+                            <constraint firstItem="pmk-yj-puh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dde-ze-kA4" secondAttribute="trailing" constant="36" id="Q07-Vl-ZKC"/>
+                            <constraint firstItem="Jgw-nO-DgB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="FiW-lr-J0K" secondAttribute="trailing" constant="85.5" id="Tdl-fx-wKl"/>
+                            <constraint firstItem="pmk-yj-puh" firstAttribute="centerY" secondItem="uzJ-Vb-HBM" secondAttribute="centerY" id="VbK-RR-3Ek"/>
+                            <constraint firstItem="Jgw-nO-DgB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XEp-8w-EaA"/>
+                            <constraint firstItem="uzJ-Vb-HBM" firstAttribute="trailing" secondItem="qzz-4J-mHX" secondAttribute="trailing" id="YB8-be-r7a"/>
+                            <constraint firstItem="yRk-zn-y9I" firstAttribute="centerY" secondItem="Xk1-d6-zvf" secondAttribute="centerY" id="b2J-QY-HcJ"/>
+                            <constraint firstItem="FiW-lr-J0K" firstAttribute="centerY" secondItem="qzz-4J-mHX" secondAttribute="centerY" id="cGI-Xe-HFw"/>
+                            <constraint firstItem="Xk1-d6-zvf" firstAttribute="width" secondItem="qzz-4J-mHX" secondAttribute="height" multiplier="49:19" id="fYM-Ts-rgt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xk1-d6-zvf" secondAttribute="bottom" constant="32" id="ioM-wD-v2b"/>
+                            <constraint firstItem="qzz-4J-mHX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jJK-5t-R4v"/>
+                            <constraint firstItem="yRk-zn-y9I" firstAttribute="trailing" secondItem="Jgw-nO-DgB" secondAttribute="trailing" id="mnn-aY-j6D"/>
+                            <constraint firstItem="uzJ-Vb-HBM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="nva-BU-gUp"/>
+                            <constraint firstItem="uzJ-Vb-HBM" firstAttribute="width" secondItem="qzz-4J-mHX" secondAttribute="height" multiplier="49:19" id="pEr-zV-bQk"/>
+                            <constraint firstItem="FiW-lr-J0K" firstAttribute="centerX" secondItem="dde-ze-kA4" secondAttribute="centerX" id="t7y-WO-oEy"/>
+                            <constraint firstItem="dde-ze-kA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ucA-ch-4rC"/>
+                            <constraint firstItem="Jxw-DD-o5Z" firstAttribute="centerY" secondItem="Xk1-d6-zvf" secondAttribute="centerY" id="vC6-W1-HDt"/>
+                            <constraint firstItem="Jxw-DD-o5Z" firstAttribute="centerX" secondItem="FiW-lr-J0K" secondAttribute="centerX" id="xQZ-1W-Xfg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="cqP-Ve-pik" kind="show" identifier="toGameScreenSegue" id="vUg-zi-VLn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-62" y="128"/>
+        </scene>
+        <!--Game Screen View Controller-->
+        <scene sceneID="Tw0-pp-Ghl">
+            <objects>
+                <viewController id="cqP-Ve-pik" customClass="GameScreenViewController" customModule="CSC470Euler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2c6-O5-ujR">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NFK-C4-MJe" userLabel="Number Buttons Stack">
+                                <rect key="frame" x="444" y="19" width="108" height="282"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9yV-fd-cwl" userLabel="Left Column Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="282"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXY-Ok-SDd" userLabel="1" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="co6-ak-g1m"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zf-Uc-JPs" userLabel="2" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="58" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="P59-JP-RUY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u25-CD-LK0" userLabel="3" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="116" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="YMG-Y1-sMB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hd0-pq-XKp" userLabel="4" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="174" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="8ok-nq-8Pc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZd-GG-xHS" userLabel="5" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="232" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="ZUk-7D-gqQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Co-R0-qlI" userLabel="Right Column Stack">
+                                        <rect key="frame" x="58" y="0.0" width="50" height="282"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFa-Hh-vbq" userLabel="6" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="oRt-SA-BEV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgf-E8-Ygt" userLabel="7" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="58" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="cQE-dA-7Fg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3p-t8-Q8D" userLabel="8" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="116" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="2Sj-VT-FdJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5t-YW-Xwk" userLabel="9" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="174" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="hVd-VO-eIt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr8-gv-OMN" userLabel="10" customClass="NumberButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="232" width="50" height="50"/>
+                                                <state key="normal" title="-" backgroundImage="NumberButtonBG"/>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="P1d-Li-eVb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jeC-Dh-n7k" userLabel="Menu Stack">
+                                <rect key="frame" x="294" y="149" width="120" height="152"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GfV-eM-eCU">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="68"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2us-v5-mdl" customClass="MenuButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                                <state key="normal" title="-" backgroundImage="MenuButtonBG"/>
+                                                <connections>
+                                                    <action selector="newGameButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="ozy-jR-bwy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-rp-qlI" customClass="MenuButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="38" width="120" height="30"/>
+                                                <state key="normal" title="-" backgroundImage="MenuButtonBG"/>
+                                                <connections>
+                                                    <action selector="submitButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="xZh-mg-YXP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="0Vy-r4-H2Y"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T7f-ab-qev">
+                                        <rect key="frame" x="0.0" y="84" width="120" height="68"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GC-cz-B4o" customClass="MenuButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                                <state key="normal" title="-" backgroundImage="MenuButtonBG"/>
+                                                <connections>
+                                                    <action selector="clearSymbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="fwD-1f-kpc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8u-td-Bpc" customClass="MenuButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="38" width="120" height="30"/>
+                                                <state key="normal" title="-" backgroundImage="MenuButtonBG"/>
+                                                <connections>
+                                                    <action selector="clearGridButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="dW7-Vg-ssk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="ShF-Mz-kK4"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OlV-kF-Yw2" userLabel="Clues Stack">
+                                <rect key="frame" x="342" y="19" width="24" height="77.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HOG-Ov-ptK">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8I-0c-Trt">
+                                                <rect key="frame" x="0.0" y="0.0" width="8" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlI-G0-NwE">
+                                                <rect key="frame" x="16" y="0.0" width="8" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E5Y-NW-luq">
+                                        <rect key="frame" x="0.0" y="28.5" width="24" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ic-F5-1hN">
+                                                <rect key="frame" x="0.0" y="0.0" width="8" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-9X-oNf">
+                                                <rect key="frame" x="16" y="0.0" width="8" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xXY-pi-SaU">
+                                        <rect key="frame" x="0.0" y="57" width="24" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVj-gG-3b8">
+                                                <rect key="frame" x="0.0" y="0.0" width="8" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-Uq-Cxi">
+                                                <rect key="frame" x="16" y="0.0" width="8" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVS-4J-Bur" userLabel="Grid View">
+                                <rect key="frame" x="16" y="36" width="248" height="248"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="M4n-SY-4bn" userLabel="Symbols Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="si9-DQ-fS8" userLabel="Row 1">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEc-rb-kBZ" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="3Be-0Y-SMx"/>
+                                                            <constraint firstAttribute="width" constant="50" id="ud3-mf-zDk"/>
+                                                        </constraints>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="ScL-cw-pzH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMV-uL-t7E" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="66" y="0.0" width="50" height="50"/>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="7SI-H2-e0X"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPO-O2-gdJ" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="132" y="0.0" width="50" height="50"/>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="WLP-Zh-B4h"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="gPO-O2-gdJ" firstAttribute="width" secondItem="lMV-uL-t7E" secondAttribute="width" id="Eoe-g3-8iS"/>
+                                                    <constraint firstItem="gPO-O2-gdJ" firstAttribute="height" secondItem="lMV-uL-t7E" secondAttribute="height" id="LuZ-TF-Uj5"/>
+                                                    <constraint firstItem="lMV-uL-t7E" firstAttribute="width" secondItem="MEc-rb-kBZ" secondAttribute="width" id="ne6-Go-CGo"/>
+                                                    <constraint firstItem="lMV-uL-t7E" firstAttribute="height" secondItem="MEc-rb-kBZ" secondAttribute="height" id="oRG-L6-hlC"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="A5Y-UT-S2d" userLabel="Row 2">
+                                                <rect key="frame" x="0.0" y="66" width="182" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCc-a5-SE5" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="EWK-Bs-DDP"/>
+                                                            <constraint firstAttribute="width" constant="50" id="hOS-V2-7wz"/>
+                                                        </constraints>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="yEt-LC-QsV"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsZ-aO-Hpp" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="66" y="0.0" width="50" height="50"/>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="SFg-m7-Kcu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBk-aB-zSj" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="132" y="0.0" width="50" height="50"/>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="Dbm-yh-qa6"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="AsZ-aO-Hpp" firstAttribute="width" secondItem="jCc-a5-SE5" secondAttribute="width" id="Q1M-Zg-Cgn"/>
+                                                    <constraint firstItem="FBk-aB-zSj" firstAttribute="width" secondItem="AsZ-aO-Hpp" secondAttribute="width" id="r2I-yG-Czu"/>
+                                                    <constraint firstItem="AsZ-aO-Hpp" firstAttribute="height" secondItem="jCc-a5-SE5" secondAttribute="height" id="wU7-K8-B8T"/>
+                                                    <constraint firstItem="FBk-aB-zSj" firstAttribute="height" secondItem="AsZ-aO-Hpp" secondAttribute="height" id="xnX-lj-diL"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ybn-z3-UM7" userLabel="Row 3">
+                                                <rect key="frame" x="0.0" y="132" width="182" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9M-n4-RuY" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Cnn-5N-hhe"/>
+                                                            <constraint firstAttribute="width" constant="50" id="Y9Q-4Q-WRs"/>
+                                                        </constraints>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="wEK-Wb-6Js"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX5-dQ-Rls" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="66" y="0.0" width="50" height="50"/>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="XkL-lc-Ref"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64x-ur-b95" customClass="SymbolButton" customModule="CSC470Euler" customModuleProvider="target">
+                                                        <rect key="frame" x="132" y="0.0" width="50" height="50"/>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="symbolButtonPressed:" destination="cqP-Ve-pik" eventType="touchUpInside" id="nGe-oL-LC7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="XX5-dQ-Rls" firstAttribute="width" secondItem="h9M-n4-RuY" secondAttribute="width" id="H88-jS-vE9"/>
+                                                    <constraint firstItem="XX5-dQ-Rls" firstAttribute="height" secondItem="h9M-n4-RuY" secondAttribute="height" id="TBP-k3-CFA"/>
+                                                    <constraint firstItem="64x-ur-b95" firstAttribute="height" secondItem="XX5-dQ-Rls" secondAttribute="height" id="Tak-4q-KRt"/>
+                                                    <constraint firstItem="64x-ur-b95" firstAttribute="width" secondItem="XX5-dQ-Rls" secondAttribute="width" id="h4h-UH-Q3R"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ghq-bD-2wi" userLabel="Column Totals">
+                                        <rect key="frame" x="0.0" y="198" width="182" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebX-8p-i5n">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="LHc-KY-udk"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Tpw-CW-SKW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvr-nr-enn">
+                                                <rect key="frame" x="66" y="0.0" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xv-jR-QEa">
+                                                <rect key="frame" x="132" y="0.0" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Nvr-nr-enn" firstAttribute="height" secondItem="ebX-8p-i5n" secondAttribute="height" id="8V8-mP-3V6"/>
+                                            <constraint firstItem="1xv-jR-QEa" firstAttribute="height" secondItem="Nvr-nr-enn" secondAttribute="height" id="St7-WW-iN4"/>
+                                            <constraint firstItem="Nvr-nr-enn" firstAttribute="width" secondItem="ebX-8p-i5n" secondAttribute="width" id="WM8-vG-9ev"/>
+                                            <constraint firstItem="1xv-jR-QEa" firstAttribute="width" secondItem="Nvr-nr-enn" secondAttribute="width" id="Xcr-Wf-cNO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCi-Jx-6fx" userLabel="Diagonal Total">
+                                        <rect key="frame" x="198" y="198" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ejr-BR-wRr"/>
+                                            <constraint firstAttribute="height" constant="50" id="fM0-zC-PLz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rMa-N8-J1M" userLabel="Row Totals">
+                                        <rect key="frame" x="198" y="0.0" width="50" height="182"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQQ-E9-Sa5" userLabel="Row 1 Total">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Wbg-rQ-o9D"/>
+                                                    <constraint firstAttribute="width" constant="50" id="kPX-si-htU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xc-Wn-8eM" userLabel="Row 2 Total">
+                                                <rect key="frame" x="0.0" y="66" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBG-Mv-Jxi" userLabel="Row 3 Total">
+                                                <rect key="frame" x="0.0" y="132" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6xc-Wn-8eM" firstAttribute="height" secondItem="NQQ-E9-Sa5" secondAttribute="height" id="FY4-cx-ZN9"/>
+                                            <constraint firstItem="oBG-Mv-Jxi" firstAttribute="width" secondItem="6xc-Wn-8eM" secondAttribute="width" id="eZC-fp-BQ1"/>
+                                            <constraint firstItem="6xc-Wn-8eM" firstAttribute="width" secondItem="NQQ-E9-Sa5" secondAttribute="width" id="gmE-td-kcQ"/>
+                                            <constraint firstItem="oBG-Mv-Jxi" firstAttribute="height" secondItem="6xc-Wn-8eM" secondAttribute="height" id="uns-pw-Gnl"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ghq-bD-2wi" firstAttribute="leading" secondItem="aVS-4J-Bur" secondAttribute="leading" id="DWd-yx-Zqz"/>
+                                    <constraint firstItem="M4n-SY-4bn" firstAttribute="top" secondItem="aVS-4J-Bur" secondAttribute="top" id="DfR-TH-eWi"/>
+                                    <constraint firstItem="ghq-bD-2wi" firstAttribute="top" secondItem="M4n-SY-4bn" secondAttribute="bottom" constant="16" id="QJv-Op-RTz"/>
+                                    <constraint firstAttribute="trailing" secondItem="hCi-Jx-6fx" secondAttribute="trailing" id="Rfw-AI-SC4"/>
+                                    <constraint firstItem="rMa-N8-J1M" firstAttribute="leading" secondItem="M4n-SY-4bn" secondAttribute="trailing" constant="16" id="pYC-lq-xkc"/>
+                                    <constraint firstItem="rMa-N8-J1M" firstAttribute="top" secondItem="aVS-4J-Bur" secondAttribute="top" id="rzq-Dv-wzD"/>
+                                    <constraint firstItem="M4n-SY-4bn" firstAttribute="leading" secondItem="aVS-4J-Bur" secondAttribute="leading" id="uma-fl-3c3"/>
+                                    <constraint firstItem="hCi-Jx-6fx" firstAttribute="leading" secondItem="ghq-bD-2wi" secondAttribute="trailing" constant="16" id="v8N-hw-pCb"/>
+                                    <constraint firstAttribute="bottom" secondItem="hCi-Jx-6fx" secondAttribute="bottom" id="wjV-gb-8SQ"/>
+                                    <constraint firstItem="hCi-Jx-6fx" firstAttribute="top" secondItem="rMa-N8-J1M" secondAttribute="bottom" constant="16" id="x0O-Fq-lGk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aVS-4J-Bur" firstAttribute="leading" secondItem="M3v-mT-QR8" secondAttribute="leading" constant="16" id="Nqv-Qr-wv9"/>
+                            <constraint firstItem="NFK-C4-MJe" firstAttribute="centerY" secondItem="2c6-O5-ujR" secondAttribute="centerY" id="SIb-wQ-e1w"/>
+                            <constraint firstItem="OlV-kF-Yw2" firstAttribute="centerX" secondItem="GfV-eM-eCU" secondAttribute="centerX" id="Tev-c3-sCL"/>
+                            <constraint firstItem="jeC-Dh-n7k" firstAttribute="bottom" secondItem="NFK-C4-MJe" secondAttribute="bottom" id="a1N-2t-3U2"/>
+                            <constraint firstItem="NFK-C4-MJe" firstAttribute="leading" secondItem="jeC-Dh-n7k" secondAttribute="trailing" constant="30" id="auG-IN-c4Z"/>
+                            <constraint firstItem="aVS-4J-Bur" firstAttribute="centerY" secondItem="2c6-O5-ujR" secondAttribute="centerY" id="iic-jS-2TW"/>
+                            <constraint firstItem="OlV-kF-Yw2" firstAttribute="top" secondItem="NFK-C4-MJe" secondAttribute="top" id="w0H-Gx-wYq"/>
+                            <constraint firstItem="M3v-mT-QR8" firstAttribute="trailing" secondItem="NFK-C4-MJe" secondAttribute="trailing" constant="16" id="xpY-Ks-g8I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M3v-mT-QR8"/>
+                    </view>
+                    <connections>
+                        <outlet property="clearGridButton" destination="r8u-td-Bpc" id="C5R-jT-67s"/>
+                        <outlet property="clearSymbolButton" destination="3GC-cz-B4o" id="aQq-Ux-Owc"/>
+                        <outlet property="clueOneSymbol" destination="L8I-0c-Trt" id="yjJ-QU-GnA"/>
+                        <outlet property="clueOneValue" destination="UlI-G0-NwE" id="ZeO-Cb-IZS"/>
+                        <outlet property="clueThreeSymbol" destination="RVj-gG-3b8" id="gb8-Cx-QFa"/>
+                        <outlet property="clueThreeValue" destination="Ydh-Uq-Cxi" id="hXT-J7-ewc"/>
+                        <outlet property="clueTwoSymbol" destination="1Ic-F5-1hN" id="o4F-qp-UTs"/>
+                        <outlet property="clueTwoValue" destination="BUA-9X-oNf" id="inf-4G-MHX"/>
+                        <outlet property="diagonalTotalLabel" destination="hCi-Jx-6fx" id="nCJ-uh-Iza"/>
+                        <outlet property="gridParentView" destination="aVS-4J-Bur" id="DzF-Gh-2me"/>
+                        <outlet property="newGameButton" destination="2us-v5-mdl" id="lDq-Ax-Yem"/>
+                        <outlet property="numberButtonsLeftStack" destination="9yV-fd-cwl" id="5IV-aX-NwI"/>
+                        <outlet property="numberButtonsRightStack" destination="2Co-R0-qlI" id="2UW-i0-2yu"/>
+                        <outlet property="submitButton" destination="2tR-rp-qlI" id="nye-A6-2AL"/>
+                        <outlet property="symbolButton1" destination="MEc-rb-kBZ" id="Wbk-1K-ne2"/>
+                        <outlet property="symbolButton2" destination="lMV-uL-t7E" id="4bh-Mr-VNb"/>
+                        <outlet property="symbolButton3" destination="gPO-O2-gdJ" id="T4J-Oy-vWE"/>
+                        <outlet property="symbolButton4" destination="jCc-a5-SE5" id="cVb-iU-rTF"/>
+                        <outlet property="symbolButton5" destination="AsZ-aO-Hpp" id="LYt-nw-Cfh"/>
+                        <outlet property="symbolButton6" destination="FBk-aB-zSj" id="des-IS-6dd"/>
+                        <outlet property="symbolButton7" destination="h9M-n4-RuY" id="A0h-c0-5Hh"/>
+                        <outlet property="symbolButton8" destination="XX5-dQ-Rls" id="zGu-zx-VLU"/>
+                        <outlet property="symbolButton9" destination="64x-ur-b95" id="atb-ue-4rq"/>
+                        <outlet property="totalColumn1" destination="ebX-8p-i5n" id="4TO-4t-NEA"/>
+                        <outlet property="totalColumn2" destination="Nvr-nr-enn" id="9IK-o3-2kC"/>
+                        <outlet property="totalColumn3" destination="1xv-jR-QEa" id="9nn-K2-EXd"/>
+                        <outlet property="totalRow1" destination="NQQ-E9-Sa5" id="2JS-Lu-tOS"/>
+                        <outlet property="totalRow2" destination="6xc-Wn-8eM" id="Kee-zp-eTP"/>
+                        <outlet property="totalRow3" destination="oBG-Mv-Jxi" id="zmC-MQ-794"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6je-qK-r4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer id="RIw-T8-rWf"/>
+            </objects>
+            <point key="canvasLocation" x="730.9859154929577" y="127.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EasyButton" width="196" height="76"/>
+        <image name="HardButton" width="196" height="76"/>
+        <image name="InfoButton" width="76" height="76"/>
+        <image name="Logo" width="175" height="76"/>
+        <image name="MediumButton" width="196" height="76"/>
+        <image name="MenuButtonBG" width="110" height="30"/>
+        <image name="MusicButton" width="76" height="76"/>
+        <image name="NumberButtonBG" width="50" height="50"/>
+    </resources>
+</document>
